@@ -32,3 +32,21 @@ int binary_search(int list[], int size, int target) {
 	}
 	return targetIndex;
 }
+
+void bubble_sort(char * arr[], int numStrings) {
+	int markerU = numStrings, markerC = 1, i = 0;
+	for (i = 0; i < markerU; i++);
+	while (i > 1) {
+		markerC = 1;
+		while (markerC < markerU) {
+			if (*arr[markerC] < *arr[markerC - 1]) {
+				char * temp = arr[markerC-1];
+				arr[markerC - 1] = arr[markerC];
+				arr[markerC] = temp;
+			}
+			markerC++;
+		}
+		markerU--;
+		for (i = 0; i < markerU; i++);
+	}
+}

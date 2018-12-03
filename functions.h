@@ -13,6 +13,7 @@ GitHub Link: https://github.com/zjnett/CptS-121-PA8
 #include <stdlib.h>
 
 char * my_str_n_cat(char *dest, const char *src, int n); 
-int binary_search(int list[], int target);
+int binary_search(int list[], int size, int target);
+void bubble_sort(char * arr[], int numStrings);
 
 #endif
