@@ -11,4 +11,6 @@ GitHub Link: https://github.com/zjnett/CptS-121-PA8
 
 #include <stdio.h>
 
+char * my_str_n_cat(char *dest, const char *src, int n); 
+
 #endif
