@@ -10,7 +10,9 @@ GitHub Link: https://github.com/zjnett/CptS-121-PA8
 #define FUNCTIONS_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 char * my_str_n_cat(char *dest, const char *src, int n); 
+int binary_search(int list[], int target);
 
 #endif
