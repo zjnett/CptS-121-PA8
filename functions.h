@@ -15,5 +15,6 @@ GitHub Link: https://github.com/zjnett/CptS-121-PA8
 char * my_str_n_cat(char *dest, const char *src, int n); 
 int binary_search(int list[], int size, int target);
 void bubble_sort(char * arr[], int numStrings);
+int is_palindrome(char str[], int length, int hasRemovedSpaces);
 
 #endif

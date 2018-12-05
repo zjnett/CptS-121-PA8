@@ -50,3 +50,39 @@ void bubble_sort(char * arr[], int numStrings) {
 		for (i = 0; i < markerU; i++);
 	}
 }
+
+int is_palindrome(char strOrg[], int length, int hasRemovedSpaces) {
+	char str[100];
+	int count = 0, i = 0;
+	while (count < length && !hasRemovedSpaces) {
+		if (strOrg[i] != ' ') {
+			str[count] = strOrg[i];
+			count++;
+		}
+		i++;
+		if (count == length) {
+			str[count] = '\0';
+		}
+	}
+
+	if (!hasRemovedSpaces) { //first time running through, use str
+		if (str[0] == '\0') {
+			return 1;
+		}
+
+		if (str[0] != str[length - 1]) {
+			return 0;
+		}
+
+		return is_palindrome(str + 1, length -= 2, 1);
+	} else { //use strOrg
+		if (strOrg[0] == '\0') {
+			return 1;
+		}
+
+		if (strOrg[0] != strOrg[length - 1]) {
+			return 0;
+		}
+		return is_palindrome(strOrg + 1, length -= 2, 1);
+	}
+}

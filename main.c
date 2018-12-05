@@ -29,6 +29,8 @@ int main(void) {
 		puts(list[i]);
 	}
 
+	//Palindrome Driver Code
+	printf("Is palindrome: %s\n", is_palindrome("r ac  ec ar", 7, 0) ? "true" : "false");
 
 	return 0;
 }
