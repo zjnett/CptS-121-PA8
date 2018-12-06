@@ -118,3 +118,48 @@ int isPrime(unsigned int n) {
 	}
 	return 1;
 }
+
+void maximum_occurrences(char *str, Occurrences occurArr[], int *max_occurrences, char *ch) {
+	int count[26] = { 0 };
+	char temp[26] = { '\0' };
+	//Note that indices of characters are in the order they appear, kept track of in parallel array temp.
+	int next = 0, nextInt = 0, c = 0, hold = 0, total = 0;
+	while (*str != '\0') {
+		c = 0;
+		for (int i = 0; i < 10; i++) {
+			if (*str == temp[i]) {
+				hold = i;
+				c++;
+			}
+		}
+		if (c == 0) {
+			temp[next++] = *str;
+		} else {
+			count[hold] += c;
+		}
+		total++;
+		str++;
+	}
+
+	//calculate frequencies
+	for (int i = 0; i < 10; i++) {
+		if (count[i] != 0) {
+			occurArr[i].num_occurences = count[i] + 1;
+			occurArr[i].frequency = (double)(count[i] + 1) / total;
+		} else {
+			occurArr[i].num_occurences = 1;
+			occurArr[i].frequency = 1.0 / total;
+		}
+	}
+
+	//return
+	int max = 0, maxIndex = 0;
+	for (int i = 0; i < 26; i++) {
+		if (count[i] > max) {
+			max = count[i];
+			maxIndex = i;
+		}
+	}
+	*max_occurrences = max + 1;
+	*ch = temp[maxIndex];
+}

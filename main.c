@@ -35,5 +35,12 @@ int main(void) {
 	//Prime Driver Code
 	printf("Sum of primes from 2 to 10: %d\n", sum_primes(10));
 
+	//Max Occurrences Driver Code
+	Occurrences array[10];
+	int occurrences = 0;
+	char ch = '\0';
+	maximum_occurrences("test string", array, &occurrences, &ch);
+	printf("%c has maximum occurrences in string, with %d occurrences.\n", ch, occurrences);
+
 	return 0;
 }
