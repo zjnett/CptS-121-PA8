@@ -32,5 +32,8 @@ int main(void) {
 	//Palindrome Driver Code
 	printf("Is palindrome: %s\n", is_palindrome("r ac  ec ar", 7, 0) ? "true" : "false");
 
+	//Prime Driver Code
+	printf("Sum of primes from 2 to 10: %d\n", sum_primes(10));
+
 	return 0;
 }

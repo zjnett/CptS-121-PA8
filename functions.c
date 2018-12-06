@@ -51,6 +51,9 @@ void bubble_sort(char * arr[], int numStrings) {
 	}
 }
 
+
+//Admittedly a more elegant solution to this would be to call an external function to check if the passed in string has spaces,
+//and another one to remove those spaces. However, I wanted to keep all assigned sub-problems on this assignment to their own functions.
 int is_palindrome(char strOrg[], int length, int hasRemovedSpaces) {
 	char str[100];
 	int count = 0, i = 0;
@@ -85,4 +88,33 @@ int is_palindrome(char strOrg[], int length, int hasRemovedSpaces) {
 		}
 		return is_palindrome(strOrg + 1, length -= 2, 1);
 	}
+}
+
+//That being said about recursion and trying to keep every problem in its own function...
+//I'm feeling really lazy.
+int sum_primes(unsigned int n) {
+	int sum = 0;
+	if (n == 2) {
+		return n;
+	}
+	if (isPrime(n)) {
+		sum = n;
+	}
+
+	return sum_primes(n - 1) + sum;
+}
+
+int isPrime(unsigned int n) {
+	if (n <= 1) {
+		return 0;
+	}
+	if (n % 2 == 0 && n > 2) {
+		return 0;
+	}
+	for (int i = 3; i < n / 2; i += 2) {
+		if (n % i == 0) {
+			return 0;
+		}
+	}
+	return 1;
 }
